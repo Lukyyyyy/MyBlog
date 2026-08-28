@@ -52,7 +52,7 @@ export default async function Post({ params: paramsPromise }: Args) {
   if (!post) return <PayloadRedirects url={url} />
 
   return (
-    <article className="pt-16 pb-16">
+    <article className="post-page">
       <PageClient />
 
       {/* Allows redirects for valid pages too */}
@@ -62,12 +62,18 @@ export default async function Post({ params: paramsPromise }: Args) {
 
       <PostHero post={post} />
 
-      <div className="flex flex-col items-center gap-4 pt-8">
-        <div className="container">
-          <RichText className="max-w-[48rem] mx-auto" data={post.content} enableGutter={false} />
+      <div className="container post-body-grid">
+        <aside aria-label="阅读进度" className="post-progress">
+          <span>01</span>
+          <span>02</span>
+          <span>03</span>
+          <span>04</span>
+        </aside>
+        <div className="post-content">
+          <RichText data={post.content} enableGutter={false} />
           {post.relatedPosts && post.relatedPosts.length > 0 && (
             <RelatedPosts
-              className="mt-12 max-w-[52rem] lg:grid lg:grid-cols-subgrid col-start-1 col-span-3 grid-rows-[2fr]"
+              className="related-index"
               docs={post.relatedPosts.filter((post) => typeof post === 'object')}
             />
           )}

@@ -1,31 +1,118 @@
-version: '3'
+name: myblog
 
 services:
-  payload:
-    image: node:18-alpine
-    ports:
-      - '3000:3000'
-    volumes:
-      - .:/home/node/app
-      - node_modules:/home/node/app/node_modules
-    working_dir: /home/node/app/
-    command: sh -c "yarn install && yarn dev"
+  app:
+    build:
+      context: .
+      network: host
+      args:
+        HTTP_PROXY: http://127.0.0.1:7897
+        HTTPS_PROXY: http://127.0.0.1:7897
+        NO_PROXY: localhost,127.0.0.1,::1
+        NEXT_PUBLIC_SERVER_URL: https://lukybetter.com
+      secrets:
+        - database_url
+        - payload_secret
+    restart: unless-stopped
+    environment:
+      CRON_SECRET: ${CRON_SECRET:?set CRON_SECRET in the Compose env file}
+      DATABASE_URL: ${DATABASE_URL:?set DATABASE_URL in the Compose env file}
+      NEXT_PUBLIC_SERVER_URL: https://lukybetter.com
+      NODE_OPTIONS: --max-old-space-size=1152
+      PAYLOAD_SECRET: ${PAYLOAD_SECRET:?set PAYLOAD_SECRET in the Compose env file}
+      PREVIEW_SECRET: ${PREVIEW_SECRET:?set PREVIEW_SECRET in the Compose env file}
     depends_on:
-      - mongo
-    env_file:
-      - .env
+      mongo:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://127.0.0.1:3000/').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    mem_limit: 1536m
+    pids_limit: 256
+    security_opt:
+      - no-new-privileges:true
+    stop_grace_period: 30s
+    ports:
+      - 127.0.0.1:3000:3000
+    volumes:
+      - media:/app/public/media
+      - next_cache:/app/.next/cache
+    networks:
+      internal:
+      proxy:
+        aliases:
+          - myblog-app
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '5'
 
   mongo:
-    image: mongo:latest
-    ports:
-      - '27017:27017'
+    image: mongo:8.0
+    restart: unless-stopped
     command:
-      - --storageEngine=wiredTiger
+      - mongod
+      - --bind_ip_all
+      - --auth
+      - --wiredTigerCacheSizeGB
+      - '0.75'
+    environment:
+      MONGO_APP_DATABASE: ${MONGO_APP_DATABASE:?set MONGO_APP_DATABASE in the Compose env file}
+      MONGO_APP_PASSWORD: ${MONGO_APP_PASSWORD:?set MONGO_APP_PASSWORD in the Compose env file}
+      MONGO_APP_USERNAME: ${MONGO_APP_USERNAME:?set MONGO_APP_USERNAME in the Compose env file}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD:?set MONGO_INITDB_ROOT_PASSWORD in the Compose env file}
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME:?set MONGO_INITDB_ROOT_USERNAME in the Compose env file}
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          mongosh --quiet
+          --username "$${MONGO_INITDB_ROOT_USERNAME}"
+          --password "$${MONGO_INITDB_ROOT_PASSWORD}"
+          --authenticationDatabase admin
+          --eval "quit(db.adminCommand('ping').ok ? 0 : 2)"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    mem_limit: 2g
+    pids_limit: 256
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - 127.0.0.1:27017:27017
     volumes:
-      - data:/data/db
+      - mongo_data:/data/db
+      - ./docker/mongo-init.sh:/docker-entrypoint-initdb.d/10-create-app-user.sh:ro
+    networks:
+      - internal
     logging:
-      driver: none
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: '5'
+
+networks:
+  internal: {}
+  proxy:
+    external: true
+    name: server_proxy
+
+secrets:
+  database_url:
+    file: /etc/myblog/build-database-url.secret
+  payload_secret:
+    file: /etc/myblog/payload.secret
 
 volumes:
-  data:
-  node_modules:
+  mongo_data:
+  media:
+  next_cache:

@@ -2,10 +2,14 @@ build
 dist / media
 node_modules
 .DS_Store
-.env
+.env*
+!.env.example
+!.env.production.example
 .next
 next-env.d.ts
+*.tsbuildinfo
 .vercel
+/notes/
 
 # Payload default media upload directory
 public/media/

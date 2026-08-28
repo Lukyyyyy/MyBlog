@@ -1,0 +1,17 @@
+.git
+.next
+node_modules
+.env
+.env.*
+!.env.example
+npm-debug.log*
+pnpm-debug.log*
+playwright-report
+test-results
+tests
+notes
+.vscode
+test.env
+DEPLOY.md
+Caddyfile
+docker/mongo-init.sh

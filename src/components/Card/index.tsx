@@ -14,12 +14,13 @@ export const Card: React.FC<{
   alignItems?: 'center'
   className?: string
   doc?: CardPostData
+  index?: number
   relationTo?: 'posts'
   showCategories?: boolean
   title?: string
 }> = (props) => {
   const { card, link } = useClickableCard({})
-  const { className, doc, relationTo, showCategories, title: titleFromProps } = props
+  const { className, doc, index, relationTo, showCategories, title: titleFromProps } = props
 
   const { slug, categories, meta, title } = doc || {}
   const { description, image: metaImage } = meta || {}
@@ -30,51 +31,37 @@ export const Card: React.FC<{
   const href = `/${relationTo}/${slug}`
 
   return (
-    <article
-      className={cn(
-        'border border-border rounded-lg overflow-hidden bg-card hover:cursor-pointer',
-        className,
-      )}
-      ref={card.ref}
-    >
-      <div className="relative w-full ">
-        {!metaImage && <div className="">No image</div>}
-        {metaImage && typeof metaImage !== 'string' && <Media resource={metaImage} size="33vw" />}
-      </div>
-      <div className="p-4">
+    <article className={cn('index-card', className)} ref={card.ref}>
+      <span className="index-card-number">{String(index || 1).padStart(2, '0')}</span>
+      <div className="index-card-copy">
         {showCategories && hasCategories && (
-          <div className="uppercase text-sm mb-4">
-            {categories?.map((category, index) => {
-              if (typeof category === 'object') {
-                const { title: titleFromCategory } = category
-
-                const categoryTitle = titleFromCategory || 'Untitled category'
-
-                const isLast = index === categories.length - 1
-
-                return (
-                  <Fragment key={index}>
-                    {categoryTitle}
-                    {!isLast && <Fragment>, &nbsp;</Fragment>}
-                  </Fragment>
-                )
-              }
-
-              return null
+          <div className="index-card-categories">
+            {categories?.map((category, categoryIndex) => {
+              if (typeof category !== 'object') return null
+              return (
+                <Fragment key={category.id || categoryIndex}>
+                  {category.title}
+                  {categoryIndex < categories.length - 1 ? ' / ' : ''}
+                </Fragment>
+              )
             })}
           </div>
         )}
         {titleToUse && (
-          <div className="prose">
-            <h3>
-              <Link className="not-prose" href={href} ref={link.ref}>
-                {titleToUse}
-              </Link>
-            </h3>
-          </div>
+          <h3>
+            <Link href={href} ref={link.ref}>
+              {titleToUse}
+            </Link>
+          </h3>
         )}
-        {description && <div className="mt-2">{description && <p>{sanitizedDescription}</p>}</div>}
+        {description && <p>{sanitizedDescription}</p>}
       </div>
+      <div className={`index-card-media tone-${((index || 1) % 2) + 1}`}>
+        {metaImage && typeof metaImage !== 'string' && <Media resource={metaImage} size="28vw" />}
+      </div>
+      <span aria-hidden="true" className="index-card-arrow">
+        →
+      </span>
     </article>
   )
 }

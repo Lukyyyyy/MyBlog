@@ -5,7 +5,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
+    "build": "cross-env NODE_OPTIONS=--no-deprecation next build --webpack",
     "postbuild": "next-sitemap --config next-sitemap.config.cjs",
     "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
     "dev:prod": "cross-env NODE_OPTIONS=--no-deprecation rm -rf .next && pnpm build && pnpm start",
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@payloadcms/admin-bar": "3.88.0",
+    "@payloadcms/db-mongodb": "3.88.0",
     "@payloadcms/live-preview-react": "3.88.0",
     "@payloadcms/next": "3.88.0",
     "@payloadcms/plugin-form-builder": "3.88.0",
@@ -51,11 +52,9 @@
     "react-dom": "19.2.6",
     "react-hook-form": "7.71.1",
     "sharp": "0.34.2",
-    "tailwind-merge": "^3.4.0",
-    "@payloadcms/db-mongodb": "3.88.0"
+    "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.2.0",
     "@playwright/test": "1.58.2",
     "@tailwindcss/postcss": "^4.1.18",
     "@tailwindcss/typography": "^0.5.19",
@@ -81,12 +80,5 @@
   "engines": {
     "node": "^18.20.2 || >=20.9.0",
     "pnpm": "^9 || ^10 || ^11"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "sharp",
-      "esbuild",
-      "unrs-resolver"
-    ]
   }
 }

@@ -60,29 +60,32 @@ export default async function Page({ searchParams: searchParamsPromise }: Args) 
   })
 
   return (
-    <div className="pt-24 pb-24">
+    <main className="content-page search-page">
       <PageClient />
-      <div className="container mb-16">
-        <div className="prose dark:prose-invert max-w-none text-center">
-          <h1 className="mb-8 lg:mb-16">Search</h1>
-
-          <div className="max-w-[50rem] mx-auto">
-            <Search />
-          </div>
+      <div className="container content-page-inner">
+        <header className="content-page-header">
+          <span aria-hidden="true">08</span>
+          <h1>
+            搜索 <em>/ SEARCH</em>
+          </h1>
+          <p>输入关键词，看看能撞见什么。</p>
+        </header>
+        <div className="search-shell">
+          <Search />
         </div>
       </div>
 
       {posts.totalDocs > 0 ? (
         <CollectionArchive posts={posts.docs as CardPostData[]} />
       ) : (
-        <div className="container">No results found.</div>
+        <div className="container gentle-empty-state">没有找到匹配内容。</div>
       )}
-    </div>
+    </main>
   )
 }
 
 export function generateMetadata(): Metadata {
   return {
-    title: `Payload Website Template Search`,
+    title: '搜索',
   }
 }

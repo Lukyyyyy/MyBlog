@@ -28,15 +28,18 @@ export default async function Page() {
   })
 
   return (
-    <div className="pt-24 pb-24">
+    <main className="index-page">
       <PageClient />
-      <div className="container mb-16">
-        <div className="prose dark:prose-invert max-w-none">
-          <h1>Posts</h1>
+      <header className="container index-page-header">
+        <span aria-hidden="true">&gt;_</span>
+        <div>
+          <h1>
+            文章 <em>/ NOTES</em>
+          </h1>
+          <p>持续输入，偶尔输出。</p>
         </div>
-      </div>
-
-      <div className="container mb-8">
+      </header>
+      <div className="container index-toolbar">
         <PageRange
           collection="posts"
           currentPage={posts.page}
@@ -52,12 +55,12 @@ export default async function Page() {
           <Pagination page={posts.page} totalPages={posts.totalPages} />
         )}
       </div>
-    </div>
+    </main>
   )
 }
 
 export function generateMetadata(): Metadata {
   return {
-    title: `Payload Website Template Posts`,
+    title: '文章',
   }
 }
