@@ -1,0 +1,763 @@
+{
+  "nexusmind": [
+    {
+      "date": "2026-08-31",
+      "commits": [
+        {
+          "hash": "0319bc58a9252bd5f2cfa0c2c070a12b91f970a7",
+          "shortHash": "0319bc5",
+          "subject": "feat(observability): 完善 AI 调用链路观测"
+        },
+        {
+          "hash": "f804cd7d22195f1b83b4eabba424b2dbc25298b6",
+          "shortHash": "f804cd7",
+          "subject": "feat(agent): 增加知识库文档清单工具"
+        },
+        {
+          "hash": "485d9c751a49680df133628ac53b9963b66b13aa",
+          "shortHash": "485d9c7",
+          "subject": "feat(model-ui): 支持重排配置与聊天模型切换"
+        },
+        {
+          "hash": "26ff5bdd13bc01e4f472a78c6e475df77f34ae09",
+          "shortHash": "26ff5bd",
+          "subject": "feat(search): 增加 RRF 融合与重排检索"
+        },
+        {
+          "hash": "57fe4b4fa1d6681d93610002e5592261708a1fda",
+          "shortHash": "57fe4b4",
+          "subject": "feat(account-ui): 完善邮箱与组织管理界面"
+        },
+        {
+          "hash": "4460cea178274f1b87451ae9918d5f223cc21835",
+          "shortHash": "4460cea",
+          "subject": "feat(account): 增加邮箱与组织治理能力"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-26",
+      "commits": [
+        {
+          "hash": "fb1cbdb7a5bd9b868e0cf33ebe95d566c975d622",
+          "shortHash": "fb1cbdb",
+          "subject": "chore(ui): 调整界面文案"
+        },
+        {
+          "hash": "98ba37f322a34afcc28f397203bef748e35bd90f",
+          "shortHash": "98ba37f",
+          "subject": "fix(graph): 改进知识图谱全屏和详情导航"
+        },
+        {
+          "hash": "3ed04a7a4769f649c7b874a3f7c3afdad6a24d0a",
+          "shortHash": "3ed04a7",
+          "subject": "feat(chat-ui): 重构聊天工作区交互"
+        },
+        {
+          "hash": "be167caabbfa7e84554ad514a3a6ebb28746f5ec",
+          "shortHash": "be167ca",
+          "subject": "fix(chat): 优化会话标题生成与历史同步"
+        },
+        {
+          "hash": "d61cc2301ded3377778b39fd87382d1b48e19b18",
+          "shortHash": "d61cc23",
+          "subject": "fix(agent): 完善工具调用引用与生成取消"
+        },
+        {
+          "hash": "26d54df44ed6ef5a1f1e1d64ace259d8ab79e1ea",
+          "shortHash": "26d54df",
+          "subject": "feat(chat): 增加会话知识范围选择"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-14",
+      "commits": [
+        {
+          "hash": "e28dbe1119dee6fc0534aa6b8b1e77db08ce01f4",
+          "shortHash": "e28dbe1",
+          "subject": "fix: 修正全局头部主按钮文字颜色"
+        },
+        {
+          "hash": "834b94eae00979438df5a7e14c8487aa30a98010",
+          "shortHash": "834b94e",
+          "subject": "feat: 支持知识库切片搜索结果高亮"
+        },
+        {
+          "hash": "df16775c1cb2f8c951b957a5ff25c14f0340f14c",
+          "shortHash": "df16775",
+          "subject": "chore: 删除废弃的 Redis 对话存储代码"
+        },
+        {
+          "hash": "509b4d56c27ded1f68f935ed2519c22a719dbd41",
+          "shortHash": "509b4d5",
+          "subject": "refactor: 改为从数据库查询聊天审计记录"
+        },
+        {
+          "hash": "f83535890c7283da21ca148b8a512b784dab28da",
+          "shortHash": "f835358",
+          "subject": "feat: 增加聊天历史 Redis 缓存"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-13",
+      "commits": [
+        {
+          "hash": "1a5a01d5546df31aa3debfe3a9d68379e4956344",
+          "shortHash": "1a5a01d",
+          "subject": "feat: 优化聊天消息时间展示并更新模型配置"
+        },
+        {
+          "hash": "468062463339cc268e9d1210c79566e5571f5a9d",
+          "shortHash": "4680624",
+          "subject": "config: 增加 Agent 最大工具调用轮次"
+        },
+        {
+          "hash": "4e2832fb073c859f5957f25fc3663ea26553134d",
+          "shortHash": "4e2832f",
+          "subject": "feat: 支持查看回答引用的文档分片"
+        },
+        {
+          "hash": "4288b98e9f010f26143c562c6f91ae40c65fcc47",
+          "shortHash": "4288b98",
+          "subject": "feat: 记录并展示 AI 思考耗时"
+        },
+        {
+          "hash": "3ed5ea944ff85b5dc4a797ecd0d2db7c9f17e14b",
+          "shortHash": "3ed5ea9",
+          "subject": "feat: 新增图谱模板管理与审核交互"
+        },
+        {
+          "hash": "b96aca0bd8361e1c3ea3a2a9ea7db7ca0603f32b",
+          "shortHash": "b96aca0",
+          "subject": "feat: 增强知识图谱抽取与组织级证据模型"
+        },
+        {
+          "hash": "67e93a1eb17adeae3a974465e40520b26c2dadcb",
+          "shortHash": "67e93a1",
+          "subject": "feat: 支持私人文档构建知识图谱"
+        },
+        {
+          "hash": "9aefae10f26b475e7228a998c3b79ca102eacc8c",
+          "shortHash": "9aefae1",
+          "subject": "feat: 隔离公开、组织内和私人知识图谱"
+        },
+        {
+          "hash": "ed3e46f245f28cf322fe6a34f3805dd81ab1b434",
+          "shortHash": "ed3e46f",
+          "subject": "feat: 展示 Agent 实时执行过程"
+        },
+        {
+          "hash": "4bfd03fcffd5bf267f78068b8b01adf6d96e6ec2",
+          "shortHash": "4bfd03f",
+          "subject": "feat: 新增 Agent 工具调用与执行轨迹持久化"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-12",
+      "commits": [
+        {
+          "hash": "231228e875a15e6eea2fecc8a1f0a26648e4ae05",
+          "shortHash": "231228e",
+          "subject": "style: 统一商务蓝主题并优化聊天界面"
+        },
+        {
+          "hash": "b7d9506a1ca75b7f5cb37b1dc78a4daf4b2f3015",
+          "shortHash": "b7d9506",
+          "subject": "feat: 新增组织知识图谱管理页面"
+        },
+        {
+          "hash": "af8a246590e83b44b4a443b01541e0ba3f3fb3bb",
+          "shortHash": "af8a246",
+          "subject": "feat: 支持组织级知识图谱聚合查询"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "commits": [
+        {
+          "hash": "546fe904aa2d10ca82e58f571704df9e5508aa96",
+          "shortHash": "546fe90",
+          "subject": "fix: 修复图谱抽取状态并完善可视化预览"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "commits": [
+        {
+          "hash": "7da0d22512f647d09a8219cf77f8919bd1af0406",
+          "shortHash": "7da0d22",
+          "subject": "feat: 新增知识图谱抽取审核与检索"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-25",
+      "commits": [
+        {
+          "hash": "e35666cc650d8ac028f0b5c19f5aec2acf0a2d4a",
+          "shortHash": "e35666c",
+          "subject": "feat: 支持失败文件断点重新处理"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-03",
+      "commits": [
+        {
+          "hash": "585391540f304cb2486475974767df59f0d55092",
+          "shortHash": "5853915",
+          "subject": "chore: 删除开发过程文档"
+        },
+        {
+          "hash": "45e7153b87804622e104fe505755adebdce0eac3",
+          "shortHash": "45e7153",
+          "subject": "fix: 修复私人空间文档访问权限"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-02",
+      "commits": [
+        {
+          "hash": "a82e57f9b14e63847aac5d86aa9b81265721a511",
+          "shortHash": "a82e57f",
+          "subject": "docs: 添加私人空间权限实施计划"
+        },
+        {
+          "hash": "315be70ccd9aaf852eeefeea0baca3b14040b109",
+          "shortHash": "315be70",
+          "subject": "docs: 设计私人空间文档权限"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-01",
+      "commits": [
+        {
+          "hash": "31ae1d0ad008ad6df1d6326083c170861d8e0e03",
+          "shortHash": "31ae1d0",
+          "subject": "style: 优化聊天界面样式"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-26",
+      "commits": [
+        {
+          "hash": "dd75078df2812509084edaa695b0cc55e8f00a46",
+          "shortHash": "dd75078",
+          "subject": "fix: 修复模型配置权限和默认选中"
+        },
+        {
+          "hash": "d923fcbce56cfc1bbf336a3298266a31ed4d27e1",
+          "shortHash": "d923fcb",
+          "subject": "feat: 新增模型配置功能"
+        },
+        {
+          "hash": "faca5e214b061ac1a5184bf443401b0622f14238",
+          "shortHash": "faca5e2",
+          "subject": "feat: 优化知识库组织标签筛选"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-25",
+      "commits": [
+        {
+          "hash": "3352b929c7744c01ebf14ac9c37f2133efb3ae35",
+          "shortHash": "3352b92",
+          "subject": "优化会话列表折叠交互"
+        },
+        {
+          "hash": "364f9a81bea7cbd16204d8d29a8ca08b49067eaa",
+          "shortHash": "364f9a8",
+          "subject": "优化聊天输入框和开发启动脚本"
+        },
+        {
+          "hash": "51d2afc98d3d7caee0997b4000e8667387aea663",
+          "shortHash": "51d2afc",
+          "subject": "修复聊天 Trace 用户标识不一致"
+        },
+        {
+          "hash": "9a2f8c06fec5e04613a65b40ff0e4ca4a63cc58b",
+          "shortHash": "9a2f8c0",
+          "subject": "Merge branch 'codex/multi-session-chat'"
+        },
+        {
+          "hash": "7584fd3434937cd09cce7f12b69de7463c903c42",
+          "shortHash": "7584fd3",
+          "subject": "feat: persist multi-session chat"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-24",
+      "commits": [
+        {
+          "hash": "2b9b92ac5f33fe9ab8da5ff335e19493bafa6c63",
+          "shortHash": "2b9b92a",
+          "subject": "fix: constrain observability trace table layout"
+        },
+        {
+          "hash": "73625ae5182a4f683c3a0a5c01251ff7f9cfa97f",
+          "shortHash": "73625ae",
+          "subject": "feat: 新增 Lanfuse 观测数据功能"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-22",
+      "commits": [
+        {
+          "hash": "fa95384d11498f477985de59fd1f3b54345f185d",
+          "shortHash": "fa95384",
+          "subject": "fix: 修复普通用户文档处理状态缺失"
+        },
+        {
+          "hash": "c9bc0160578282cc28a95009a0a0b879a902bb31",
+          "shortHash": "c9bc016",
+          "subject": "Fix default org document access"
+        },
+        {
+          "hash": "963c82582d3d72e561d60123ea199ca66aa6c3b9",
+          "shortHash": "963c825",
+          "subject": "feat: support configurable document chunk size"
+        },
+        {
+          "hash": "45b777f131f3cc457e27699ef66358dbcc5c82ea",
+          "shortHash": "45b777f",
+          "subject": "feat: 知识库文件列表支持排序"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-05",
+      "commits": [
+        {
+          "hash": "2aac805eb82367bffa879bf6c9ac3aa1b5cd2d3e",
+          "shortHash": "2aac805",
+          "subject": "接入MinerU并修复格式兼容"
+        }
+      ]
+    },
+    {
+      "date": "2026-06-04",
+      "commits": [
+        {
+          "hash": "50333853e9c73bd06ab4c84ff47c7e308b12d6c0",
+          "shortHash": "5033385",
+          "subject": "启动脚本更改"
+        },
+        {
+          "hash": "ce3b0a4580b018b6ad3ccc9c9e7e49332f5a5164",
+          "shortHash": "ce3b0a4",
+          "subject": "迁移至macOS"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-30",
+      "commits": [
+        {
+          "hash": "ba5f701b82342062b67b3e8d105137aa2deab82b",
+          "shortHash": "ba5f701",
+          "subject": "优化知识库列表与处理状态展示"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-29",
+      "commits": [
+        {
+          "hash": "de20342a1b934fa4ce1c056bdade4668cc3973a3",
+          "shortHash": "de20342",
+          "subject": "feat: 集成 MinerU 解析与处理状态跟踪"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-28",
+      "commits": [
+        {
+          "hash": "f10efe95132bc20e57da7245ed311da8f8b98dd8",
+          "shortHash": "f10efe9",
+          "subject": "feat: 增加解析切片查看功能"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-27",
+      "commits": [
+        {
+          "hash": "d6e54eb0785284a7f17bfee51276536387f02d13",
+          "shortHash": "d6e54eb",
+          "subject": "feat: add remembered login option"
+        },
+        {
+          "hash": "f23445b75149b40cdbd67444b93c9373b3b75233",
+          "shortHash": "f23445b",
+          "subject": "fix: improve file preview rendering"
+        },
+        {
+          "hash": "a078834a5748eccbbd4b8e63e6ac692743803db3",
+          "shortHash": "a078834",
+          "subject": "Initial commit"
+        }
+      ]
+    }
+  ],
+  "kairo-cli": [
+    {
+      "date": "2026-08-31",
+      "commits": [
+        {
+          "hash": "c91bb4db2266b98f61557ef79a487b7f01e08056",
+          "shortHash": "c91bb4d",
+          "subject": "docs(web): 更新邮箱认证与邮件配置说明"
+        },
+        {
+          "hash": "a9f3edda6730467c3a155583dbc075effde2c6b6",
+          "shortHash": "a9f3edd",
+          "subject": "feat(web): 支持邮箱账号与验证码认证"
+        },
+        {
+          "hash": "e9774f252e136ac8c86a2985eba8acd960d7dc49",
+          "shortHash": "e9774f2",
+          "subject": "feat(mail): 集成腾讯云 SES 邮件服务"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "commits": [
+        {
+          "hash": "8700fdbca339d28259a1f432968ff554f72479cc",
+          "shortHash": "8700fdb",
+          "subject": "docs(mail): 添加邮件模板示例"
+        },
+        {
+          "hash": "40456ea61e9f440d2845d963b24d486edc0f6a6f",
+          "shortHash": "40456ea",
+          "subject": "fix(web): 切换配置后刷新模型标识"
+        },
+        {
+          "hash": "222bb0713f257244dd7fd445f9bddf100ac8b5d1",
+          "shortHash": "222bb07",
+          "subject": "fix(web): 中文化控制台与接口错误提示"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-26",
+      "commits": [
+        {
+          "hash": "717273e6adb297c73426c44e1fc645c27377c556",
+          "shortHash": "717273e",
+          "subject": "fix(wechat): 限制通道选择已有工作区"
+        },
+        {
+          "hash": "6b9816b0f9c6d920c963eae6fc5cc58aa7240de0",
+          "shortHash": "6b9816b",
+          "subject": "feat(web): 扩展管理员工作区访问范围"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-25",
+      "commits": [
+        {
+          "hash": "29eba157510e53d25422451320efed08ce8abc2a",
+          "shortHash": "29eba15",
+          "subject": "feat(web): 更新控制台交互与使用说明"
+        },
+        {
+          "hash": "ec841b66a9aa1971a37e7ed8c1ca39dac4fa6f16",
+          "shortHash": "ec841b6",
+          "subject": "feat(web): 集成多用户控制台后端"
+        },
+        {
+          "hash": "8906137053dd2787d1782cf10a3a824fc6b96d95",
+          "shortHash": "8906137",
+          "subject": "feat(wechat): 支持多用户通道与旧绑定迁移"
+        },
+        {
+          "hash": "ab00bf0b642c942594504f6754e2d895cf4df43e",
+          "shortHash": "ab00bf0",
+          "subject": "feat(runtime): 支持可重连 SSE 实时输出"
+        },
+        {
+          "hash": "066729bb448e80fa182da29b0ac315fea3cef72c",
+          "shortHash": "066729b",
+          "subject": "feat(billing): 增加用户额度与用量计费"
+        },
+        {
+          "hash": "1870615396001aa00046030601e8bfcfbab143e4",
+          "shortHash": "1870615",
+          "subject": "fix(web): 支持 Cookie 会话认证"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-17",
+      "commits": [
+        {
+          "hash": "97019085266a1d6fc82bdb42f04e54d83d8215b7",
+          "shortHash": "9701908",
+          "subject": "feat(web): 新增项目侧边栏与目录选择界面"
+        },
+        {
+          "hash": "cb2c047e41492b1db0e4a67a80f94e8593bbccbc",
+          "shortHash": "cb2c047",
+          "subject": "feat(web): 支持会话绑定与管理工作区"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-14",
+      "commits": [
+        {
+          "hash": "5891b540a629b00bff723d6984693b5a9dd14ffa",
+          "shortHash": "5891b54",
+          "subject": "feat(agent): 支持可配置的模型计费规则"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-13",
+      "commits": [
+        {
+          "hash": "dcce781e31f73b5ea5ec259156bd9c513a9688f1",
+          "shortHash": "dcce781",
+          "subject": "refactor(web): 将 Agent 模式显示为 ReAct"
+        },
+        {
+          "hash": "b04be8940fcdc7c8273247ba01369a3de74267f0",
+          "shortHash": "b04be89",
+          "subject": "feat(web): 支持用户级模型配置与快照"
+        },
+        {
+          "hash": "7402ecb3fd835f200243f5cf8eea650c687f3c1d",
+          "shortHash": "7402ecb",
+          "subject": "feat(web): 支持用户注册和修改密码"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-12",
+      "commits": [
+        {
+          "hash": "536953a96ba708bb3355e26fb2fe1eebff438d8b",
+          "shortHash": "536953a",
+          "subject": "feat(web): 展示计划审核与任务进度界面"
+        },
+        {
+          "hash": "2a803db4bc19dd64b843f57434c4be072010fb8a",
+          "shortHash": "2a803db",
+          "subject": "feat(web): 支持 Plan 和 Team 执行模式"
+        },
+        {
+          "hash": "6fca6e0032a94c5f260cc054aafdeaa724b6f93e",
+          "shortHash": "6fca6e0",
+          "subject": "feat(agent): 新增计划任务生命周期回调"
+        },
+        {
+          "hash": "354a6715b0c184c0b7618861ca1a9c5e3ffecf8d",
+          "shortHash": "354a671",
+          "subject": "feat(web): 新增多用户 Web 控制台"
+        },
+        {
+          "hash": "bc8b2fcf3a1bfaad604b142003a589d1068d9bb6",
+          "shortHash": "bc8b2fc",
+          "subject": "feat(config): 启动时加载 dotenv 配置"
+        },
+        {
+          "hash": "70ece266812d7bec60feac630b9eaf4bc5a83498",
+          "shortHash": "70ece26",
+          "subject": "feat(trace): 重构私有模型会话追踪"
+        },
+        {
+          "hash": "298d67203c4f8450b9ef9d4062628c17786afbda",
+          "shortHash": "298d672",
+          "subject": "feat(memory): 使用 jieba 改进中文记忆分词"
+        },
+        {
+          "hash": "564fb2e06827cb1761bbc084bd5a1f5b37a9b6cd",
+          "shortHash": "564fb2e",
+          "subject": "build: 更新运行时依赖与锁文件"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-04",
+      "commits": [
+        {
+          "hash": "204f0752083a4556869287b0347a6a4c3095b781",
+          "shortHash": "204f075",
+          "subject": "fix: 引导计划步骤使用中文描述"
+        },
+        {
+          "hash": "523d749880aa4bee984961b18b9439a724aaab95",
+          "shortHash": "523d749",
+          "subject": "fix: 将全局环境配置迁移至 KairoCLI 目录"
+        },
+        {
+          "hash": "badac163faf8c278dd84b5ef26ac88564f115c93",
+          "shortHash": "badac16",
+          "subject": "fix: 优化多行输入与滚动体验"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-24",
+      "commits": [
+        {
+          "hash": "9ddcd2d7722255d162ba176ee272a5eb61867a8a",
+          "shortHash": "9ddcd2d",
+          "subject": "ci: 分层执行跨平台质量验证"
+        },
+        {
+          "hash": "9e4f35ae1f21476282ce6f63c19e955798683461",
+          "shortHash": "9e4f35a",
+          "subject": "ci: 修复测试日志洪泛与任务阻塞"
+        },
+        {
+          "hash": "34c2fa3f9990b4ca19e95522573ad2a147063502",
+          "shortHash": "34c2fa3",
+          "subject": "style: 统一 Ruff 代码格式"
+        },
+        {
+          "hash": "fa565dffd882371ca61ac63922d2e7fe19bb0e89",
+          "shortHash": "fa565df",
+          "subject": "feat: 优化会话列表与批量删除"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-23",
+      "commits": [
+        {
+          "hash": "4c73b782c8b98681a1e6a29940ea9999fc8890cb",
+          "shortHash": "4c73b78",
+          "subject": "feat: 优化文件引用补全菜单"
+        },
+        {
+          "hash": "89e0aaf9f430b790f8613bb3bbfcca04ca576950",
+          "shortHash": "89e0aaf",
+          "subject": "Bound CI duration and expose test progress"
+        },
+        {
+          "hash": "1be6616072b637b8dada5cd91bbebc79327d63f6",
+          "shortHash": "1be6616",
+          "subject": "Handle restricted process-group cleanup"
+        },
+        {
+          "hash": "0b0778078c86b1c0df6ae42035e9bc64b421a54c",
+          "shortHash": "0b07780",
+          "subject": "Run mypy on supported CI platforms"
+        },
+        {
+          "hash": "50b2f4780f0cbfdea9e7554c12f1fee299f46516",
+          "shortHash": "50b2f47",
+          "subject": "Apply Ruff formatting"
+        },
+        {
+          "hash": "652365b910c754ecf10c616f078132a55e9d0efd",
+          "shortHash": "652365b",
+          "subject": "Initial commit"
+        }
+      ]
+    }
+  ],
+  "agentflow": [
+    {
+      "date": "2026-08-31",
+      "commits": [
+        {
+          "hash": "62ea74423e3f029156155b678fcced867a41f545",
+          "shortHash": "62ea744",
+          "subject": "fix(frontend): 更换标志资源路径以绕过缓存"
+        },
+        {
+          "hash": "f325eefff13b2ea1988c5cc5af30adceac3f54cc",
+          "shortHash": "f325eef",
+          "subject": "fix(frontend): 统一浏览器与 README 标志"
+        },
+        {
+          "hash": "daca8f498673bc082fc7ea1e85e806becf7b7f55",
+          "shortHash": "daca8f4",
+          "subject": "fix(frontend): 优化登录表单自动填充体验"
+        },
+        {
+          "hash": "eab1ad9acc7f49f3d5e84200f598de28c445a042",
+          "shortHash": "eab1ad9",
+          "subject": "fix(security): 实现用户资源与工作流执行隔离"
+        },
+        {
+          "hash": "07c9bb3f6814bc77ffdf022980b5b1e357dad667",
+          "shortHash": "07c9bb3",
+          "subject": "feat(auth): 持久化默认账户并在令牌中携带用户ID"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-30",
+      "commits": [
+        {
+          "hash": "c2028b724d5d7bd6c9cbecb9ccf80610ffdfe86e",
+          "shortHash": "c2028b7",
+          "subject": "chore: 脱敏示例环境配置"
+        },
+        {
+          "hash": "c3915b588c13dd5afa3790075902e33d36d0e06d",
+          "shortHash": "c3915b5",
+          "subject": "style: 优化工作流编辑器界面"
+        },
+        {
+          "hash": "803efbad1428421b2f5362da26f72b57d578f2fe",
+          "shortHash": "803efba",
+          "subject": "feat: 接入前端邮箱登录与注册"
+        },
+        {
+          "hash": "044cdb54a69c0cddf456f1508920fb8da63da82d",
+          "shortHash": "044cdb5",
+          "subject": "feat: 新增邮箱验证码注册"
+        },
+        {
+          "hash": "ede3f3820a1dc589ffd3cf33286ee4e32b956864",
+          "shortHash": "ede3f38",
+          "subject": "feat: 支持邮箱账户登录"
+        },
+        {
+          "hash": "f1f4a57df0451a2d5fc7e539e9062756bf174451",
+          "shortHash": "f1f4a57",
+          "subject": "fix: 修正知识库索引任务表结构"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-17",
+      "commits": [
+        {
+          "hash": "341fe08389bb1560b1f63e2ea29eccf8a6cff9fa",
+          "shortHash": "341fe08",
+          "subject": "docs: 更新中文简介与项目展示图"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-15",
+      "commits": [
+        {
+          "hash": "38242fd3c7bfccaaa6b82ae457d0c588d00eef32",
+          "shortHash": "38242fd",
+          "subject": "feat: 发布 AgentFlow 初始版本"
+        }
+      ]
+    }
+  ]
+}
