@@ -10,13 +10,19 @@ services:
         HTTPS_PROXY: http://127.0.0.1:7897
         NO_PROXY: localhost,127.0.0.1,::1
         NEXT_PUBLIC_SERVER_URL: https://lukybetter.com
+        AGENTFLOW_APP_URL: ${AGENTFLOW_APP_URL:?set AGENTFLOW_APP_URL in the Compose env file}
+        NEXUSMIND_APP_URL: ${NEXUSMIND_APP_URL:?set NEXUSMIND_APP_URL in the Compose env file}
+        KAIRO_CLI_APP_URL: ${KAIRO_CLI_APP_URL:?set KAIRO_CLI_APP_URL in the Compose env file}
       secrets:
         - database_url
         - payload_secret
     restart: unless-stopped
     environment:
+      AGENTFLOW_APP_URL: ${AGENTFLOW_APP_URL:?set AGENTFLOW_APP_URL in the Compose env file}
       CRON_SECRET: ${CRON_SECRET:?set CRON_SECRET in the Compose env file}
       DATABASE_URL: ${DATABASE_URL:?set DATABASE_URL in the Compose env file}
+      KAIRO_CLI_APP_URL: ${KAIRO_CLI_APP_URL:?set KAIRO_CLI_APP_URL in the Compose env file}
+      NEXUSMIND_APP_URL: ${NEXUSMIND_APP_URL:?set NEXUSMIND_APP_URL in the Compose env file}
       NEXT_PUBLIC_SERVER_URL: https://lukybetter.com
       NODE_OPTIONS: --max-old-space-size=1152
       PAYLOAD_SECRET: ${PAYLOAD_SECRET:?set PAYLOAD_SECRET in the Compose env file}

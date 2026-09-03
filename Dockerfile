@@ -30,6 +30,12 @@ COPY . .
 # NEXT_PUBLIC_* values are compiled into the client bundle at build time.
 ARG NEXT_PUBLIC_SERVER_URL=https://lukybetter.com
 ENV NEXT_PUBLIC_SERVER_URL=$NEXT_PUBLIC_SERVER_URL
+ARG AGENTFLOW_APP_URL=https://agentflow.lukybetter.com
+ARG NEXUSMIND_APP_URL=https://nexusmind.lukybetter.com
+ARG KAIRO_CLI_APP_URL=https://kairocli.lukybetter.com
+ENV AGENTFLOW_APP_URL=$AGENTFLOW_APP_URL
+ENV NEXUSMIND_APP_URL=$NEXUSMIND_APP_URL
+ENV KAIRO_CLI_APP_URL=$KAIRO_CLI_APP_URL
 
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
