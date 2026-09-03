@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
@@ -10,6 +11,11 @@ const exploreLinks = [
   { href: '/projects', label: '作品', icon: FolderHeart },
   { href: '/friends', label: '友链', icon: Link2 },
 ]
+
+const ICP_BEIAN_NUMBER = '湘ICP备2026037508号-1'
+const PUBLIC_SECURITY_BEIAN_NUMBER = '湘公网安备43010502002236号'
+const PUBLIC_SECURITY_BEIAN_URL =
+  'https://beian.mps.gov.cn/#/query/webSearch?code=43010502002236'
 
 export async function Footer() {
   return (
@@ -33,7 +39,18 @@ export async function Footer() {
           <Link className="brand-logo footer-logo" href="/">
             <Logo />
           </Link>
-          <p>© {new Date().getFullYear()} Lukyyyyy · BUILT WITH CURIOSITY.</p>
+          <div className="footer-legal">
+            <p>© {new Date().getFullYear()} Lukyyyyy. All Rights Reserved.</p>
+            <div aria-label="网站备案信息" className="footer-registration">
+              <a href="https://beian.miit.gov.cn/" rel="noreferrer" target="_blank">
+                {ICP_BEIAN_NUMBER}
+              </a>
+              <a href={PUBLIC_SECURITY_BEIAN_URL} rel="noreferrer" target="_blank">
+                <Image alt="" aria-hidden="true" height={20} src="/beian.png" width={18} />
+                <span>{PUBLIC_SECURITY_BEIAN_NUMBER}</span>
+              </a>
+            </div>
+          </div>
           <Link href="#top" aria-label="返回顶部" className="back-to-top">
             ↑
           </Link>

@@ -2442,8 +2442,32 @@ input:focus-visible {
   color: var(--lab-muted);
   font-family: var(--font-geist-mono);
 }
-.footer-bottom-inner > p {
+.footer-legal {
+  display: grid;
+  gap: 0.35rem;
   font-size: 0.65rem;
+  text-align: center;
+}
+.footer-registration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.15rem;
+}
+.footer-registration a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: inherit;
+}
+.footer-registration a:hover {
+  color: var(--lab-blue);
+}
+.footer-registration img {
+  width: 0.9rem;
+  height: 1rem;
+  object-fit: contain;
 }
 .back-to-top {
   width: 2.5rem;
@@ -3112,6 +3136,11 @@ input:focus-visible {
   }
   .footer-bottom-inner {
     grid-template-columns: 1fr auto;
+  }
+  .footer-legal {
+    grid-row: 2;
+    grid-column: 1 / -1;
+    padding-bottom: 1.25rem;
   }
   .index-page {
     padding-top: 2rem;
