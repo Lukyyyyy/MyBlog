@@ -46,7 +46,14 @@ export async function Footer() {
                 {ICP_BEIAN_NUMBER}
               </a>
               <a href={PUBLIC_SECURITY_BEIAN_URL} rel="noreferrer" target="_blank">
-                <Image alt="" aria-hidden="true" height={20} src="/beian.png" width={18} />
+                <Image
+                  alt=""
+                  aria-hidden="true"
+                  height={20}
+                  src="/beian.png"
+                  unoptimized
+                  width={18}
+                />
                 <span>{PUBLIC_SECURITY_BEIAN_NUMBER}</span>
               </a>
             </div>
