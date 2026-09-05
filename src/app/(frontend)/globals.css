@@ -1900,14 +1900,14 @@ input:focus-visible {
 }
 
 .home-hero {
-  min-height: 43rem;
+  min-height: calc(100svh - 4.75rem);
   overflow: hidden;
   border-bottom: 1px solid var(--lab-line);
   background: rgba(255, 255, 255, 0.58);
 }
 
 .hero-grid {
-  min-height: 43rem;
+  min-height: calc(100svh - 4.75rem);
   display: grid;
   grid-template-columns: minmax(25rem, 0.9fr) minmax(30rem, 1.1fr);
   gap: clamp(2rem, 5vw, 7rem);
@@ -3006,6 +3006,9 @@ input:focus-visible {
 @media (max-width: 52rem) {
   .site-header-inner {
     min-height: 4.25rem;
+  }
+  .home-hero {
+    min-height: calc(100svh - 4.25rem);
   }
   .site-nav {
     top: 100%;
