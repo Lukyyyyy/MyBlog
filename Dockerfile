@@ -11,12 +11,15 @@ FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
+ARG COREPACK_NPM_REGISTRY=https://registry.npmjs.org
+ARG PNPM_REGISTRY=https://registry.npmjs.org
+
 # Install dependencies based on the preferred package manager
 COPY package.json pnpm-workspace.yaml yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 RUN --mount=type=cache,id=pnpm-store,target=/root/.local/share/pnpm/store \
   if [ -f yarn.lock ]; then yarn --frozen-lockfile; \
   elif [ -f package-lock.json ]; then npm ci; \
-  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i --frozen-lockfile; \
+  elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm config --location=project set registry "$PNPM_REGISTRY" && pnpm i --frozen-lockfile; \
   else echo "Lockfile not found." && exit 1; \
   fi
 
@@ -24,6 +27,7 @@ RUN --mount=type=cache,id=pnpm-store,target=/root/.local/share/pnpm/store \
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /app
+ARG COREPACK_NPM_REGISTRY=https://registry.npmjs.org
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 

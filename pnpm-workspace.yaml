@@ -1,3 +1,11 @@
+supportedArchitectures:
+  os:
+    - linux
+  cpu:
+    - x64
+  libc:
+    - musl
+
 allowBuilds:
   esbuild: true
   sharp: true
