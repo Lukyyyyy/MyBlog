@@ -22,7 +22,8 @@ const nextConfig: NextConfig = {
     localPatterns: [
       {
         pathname: '/api/media/file/**',
-        search: '',
+        // Payload appends each media item's updatedAt value as a cache-busting query string.
+        // Omitting the search property allows those dynamic query strings through the Next.js image optimizer.
       },
       {
         pathname: '/brand/**',
